@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             tools:context=".screen.wallet.balance.BalanceFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/header"
+                android:layout_width="0dp"
+                android:layout_height="160dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/accountIcon"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginStart="16dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"/>
+            <TextView
+                    android:id="@+id/accountName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    app:layout_constraintStart_toEndOf="@+id/accountIcon"
+                    android:layout_marginStart="20dp" app:layout_constraintBottom_toTopOf="@+id/accountId"
+                    app:layout_constraintTop_toTopOf="@+id/accountIcon"
+                    android:textStyle="bold" android:text="d-ex"/>
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/accountId"
+                    app:layout_constraintBottom_toBottomOf="@+id/accountIcon"
+                    app:layout_constraintTop_toBottomOf="@+id/accountName"
+                    android:textSize="12sp" app:layout_constraintStart_toStartOf="@+id/accountName"
+                    android:text="1.2.321423"/>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="100dp"
+                    android:layout_height="70dp"
+                    app:layout_constraintTop_toTopOf="parent" app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginEnd="8dp" android:id="@+id/sendView"
+                    app:layout_constraintBottom_toTopOf="@+id/receiveView" android:background="#d16464">
+
+                <ImageView
+                        android:src="@drawable/ic_file_search"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/sendImageView"
+                        android:layout_marginTop="8dp" app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
+                        app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"/>
+                <TextView
+                        android:text="SEND"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        app:layout_constraintTop_toBottomOf="@+id/sendImageView"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:layout_marginEnd="8dp" app:layout_constraintStart_toStartOf="parent"
+                        android:layout_marginStart="8dp" android:layout_marginBottom="8dp"
+                        app:layout_constraintBottom_toBottomOf="parent"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="100dp"
+                    android:layout_height="70dp"
+                    app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:background="#d16464"
+                    android:id="@+id/receiveView" app:layout_constraintTop_toBottomOf="@+id/sendView">
+
+                <ImageView
+                        android:src="@android:drawable/btn_dialog"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/receiveImageView"
+                        android:layout_marginTop="8dp" app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
+                        app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"/>
+                <TextView
+                        android:text="RECEIVE"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        app:layout_constraintTop_toBottomOf="@+id/receiveImageView"
+                        app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
+                        app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
+                        android:layout_marginBottom="8dp" app:layout_constraintBottom_toBottomOf="parent"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                    android:text="23133"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/btsValueTextView" app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginStart="20dp" android:layout_marginTop="20dp"
+                    app:layout_constraintTop_toBottomOf="@+id/accountIcon" android:textSize="18sp"/>
+            <TextView
+                    android:text="BTS"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toEndOf="@+id/btsValueTextView"
+                    android:layout_marginStart="8dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/btsValueTextView"/>
+            <TextView
+                    android:text="12412.214"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/currValueTextView" android:layout_marginTop="20dp"
+                    app:layout_constraintTop_toBottomOf="@+id/btsValueTextView"
+                    app:layout_constraintStart_toStartOf="@+id/btsValueTextView" android:layout_marginStart="8dp"/>
+            <TextView
+                    android:text="USD"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/currTextView" app:layout_constraintStart_toEndOf="@+id/currValueTextView"
+                    android:layout_marginStart="8dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/currValueTextView"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/balanceRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/header"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>
